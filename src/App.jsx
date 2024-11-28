@@ -12,6 +12,11 @@ const App = () => {
   const [showAll, setShowAll] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
 
+// do not render anything ih notes is still null
+if (!notes) { 
+  return null 
+}
+
   useEffect(() => {
     noteService
       .getAll()
